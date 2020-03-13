@@ -49,9 +49,7 @@ function play(){
             case ENTER_KEY:
                 startGame();
                 break;
-            case R_KEY:
-                restart();
-                break;
+
         }
     });
 }

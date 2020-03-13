@@ -20,14 +20,14 @@ Nazi.prototype.move = function() {
 function createNaziGroup(){
     let temSpeed = Math.random()*1.3 + 0.5;
     let temXPos = Math.random() * (canvas.width - NAZI_WIDTH - 1);
-    let temYPos = Math.random() * -canvas.height;
+    let temYPos = Math.random() * -5 * canvas.height - NAZI_HEIGHT/2 ;
     let naziPlane = new Nazi(temXPos,temYPos,NAZI_WIDTH, NAZI_HEIGHT, temSpeed);
     naziGroup.push(naziPlane);
     naziGroup[i].show();
 }
 
 function attackedByNaziGroup() {
-    for(i = 0; i < 50 ; i++){
+    for(i = 0; i < NUMBER_NAZI ; i++){
         createNaziGroup();
     }
 }
