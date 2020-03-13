@@ -4,6 +4,19 @@ let royalPlane = new Royal(canvas.width / 2 - ROYAL_WIDTH / 2, canvas.height - R
 let isGameOver = false;
 let score = 0;
 
+function guideLine(){
+    ctx.beginPath();
+    ctx.font = "20px arial";
+    ctx.fillStyle = 'white';
+    ctx.fillText('Tháng 9/1940, Đức bắt đầu không kích tấn công London.', 10, 100);
+    ctx.fillText('Hãy tham gia cùng Không quân Hoàng Gia Anh ', 10, 150);
+    ctx.fillText('để chống lại bọn Phát Xít xấu xa nhé!', 10, 200);
+    ctx.fillText('Ấn  ENTER để bắt đầu', 10, 250);
+    ctx.fillText('Ấn SPACE để bắn', 10, 300);
+    ctx.fillText('Ấn phím mũi tên để di chuyển', 10, 350);
+    ctx.closePath();
+}
+
 function play(){
     document.addEventListener("keyup", function(event){
         switch(event.keyCode){
@@ -76,6 +89,7 @@ function checkBingo() {
         }
     }
 }
+guideLine();
 play();
 royalPlane.show();
 function startGame() {
@@ -92,7 +106,7 @@ function startGame() {
         }
         requestAnimationFrame(startGame);
     } else {
-        alert("Game Over. Your score is " +  score);
+        alert("Toang mất London rồi! Bạn hạ được " +  score + " máy báy");
     }
 
 }
